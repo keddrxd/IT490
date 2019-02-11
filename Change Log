@@ -1,7 +1,8 @@
 Change Log - Spaghetti Eaters
 
 2/11/19
-Virtual Machine- Changed Network adapter in Virtual Box settings from NAT to Bridged Network to allow connection between other VMS.
+Virtual Machine
+	-Changed Network adapter in Virtual Box settings from NAT to Bridged Network to allow connection between other VMS.
 
 2/11/19
 RabbitMQ
