@@ -1,4 +1,4 @@
-Installing Rabbitmq
+Installing RabbitMQ
     Sudo apt-get install vim
     Sudo apt-get install php
     Sudo apt-get install aptitude
@@ -8,7 +8,7 @@ Installing Rabbitmq
     Sudo apt-get install rabbitmq-server
     Sudo service start rabbitmq
 
-How to test Rabbitmq client
+How to test RabbitMQ client
     cd ./git
     ls
     vi testRabbitMQ.ini
