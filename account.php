@@ -1,9 +1,9 @@
 <?php
 
-$hostname = "sql2.njit.edu";
-$username = "asr56";
-$project = "asr56";
-$password = "fU1wreLTy"
+$hostname = "192.168.1.4";
+$username = "test";
+$project = "test";
+$password = "test"
 
 
 ?>

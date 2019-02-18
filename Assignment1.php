@@ -77,7 +77,6 @@ function auth($userName, $passWord)
 {
 	include ("account.php");
 	global $db;
-	$s = "select * from A";
 	$t = mysqli_query ($db , $s);
 	$rows = mysqli_num_rows($t);
 	
@@ -102,99 +101,11 @@ function auth($userName, $passWord)
 	return false;	
 }
 
-function withdraw($user, $amount)
-{
-	global $db;
-	$s  =  "select * from  A where user = '$user'" ;
-	($t = mysqli_query( $db,$s ) )  or die( mysqli_error($db) );
-	while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
-		$cur = $r["cur_balance"];
-		if($cur > $amount)
-		{
-			$up = "UPDATE A SET cur_balance = cur_balance - $amount WHERE user = '$user'";
-			mysqli_query($db,$up) or die (mysqli_error());
-
 	
-			$in = "INSERT INTO T (user, type, amount, date) VALUES ('$user', 'W', '$amount', NOW())";
-			mysqli_query($db,$in) or die (mysqli_error());
-			
-			print "<br>Type of Transaction: W<br>";
-			print "Amount of Transaction: $$amount";
-			
-		}else{
-			print "<br>NOT ENOUGH IN ACCOUNT TO WITHDRAW!<br><br>Available Balance: $cur<br>Amount Attempted to Withdraw: $amount";
-			
-		}	
 }
 }
 
-function deposit($user, $amount)
-{
-	global $db;
-	
-	$up = "UPDATE A SET cur_balance = cur_balance + $amount WHERE user = '$user'";
-	mysqli_query($db,$up) or die (mysqli_error());
 
-	
-	$in = "INSERT INTO T (user, type, amount, date) VALUES ('$user', 'D', '$amount', NOW())";
-	mysqli_query($db,$in) or die (mysqli_error());
-	
-	print "<br>Type of Transaction: D<br>";
-	print "Amount of Transaction: $$amount";
-}
-
-function show ($username, &$out){
-
- global $db; 
- $s  =  "select * from  A where user = '$username'" ;
- $out .= "<br>SQL statement is: $s<br><br>"; 
- ($t = mysqli_query( $db,$s ) )  or die( mysqli_error($db) );
- $k = "select * from T where user = '$username'";
- ($p = mysqli_query( $db,$k ) )  or die( mysqli_error($db) );
-
- while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) {
-
-	$username = $r[ "user" ];
-	$curbalance = $r[ "cur_balance" ];
-	$fullname = $r["fullname"];
-	$email = $r["mail"];
-	$init = $r["init_balance"];
-	$number = $r["cell"];  
-	$out .= "Username is: $username<br>";
-	$out .= "User's full name is: $fullname<br>";
-	$out .= "User's email address is: $email<br>";
-	$out .= "User's cell phone number is: $number<br>";
-	$out .= "User's initial balance was: $$init<br>";
-	$out .= "User's current balance is: $$curbalance<br><br>";
- }
- while ( $r = mysqli_fetch_array($p,MYSQLI_ASSOC) ) {
-	  
-	  $type = $r["type"];
-	  $amount = $r["amount"];
-	  $date = $r["date"];
-	  $out .= "==================================";
-	  $out .= "<br>Type of transaction: $type<br>";
-	  $out .= "Amount of transtation: $$amount<br>";
-	  $out .= "Date of transation: $date<br>";	  
-  } 
-   
-  echo $out; 
-}
-
-function mailer ( $username , $out )
-{
-	global $db; 
-	$s  =  "select * from  A where user = '$username'" ;
-	$t = mysqli_query ($db , $s);
-	while ( $r = mysqli_fetch_array($t,MYSQLI_ASSOC) ) 
-	{
-		$mail = $r["mail"];
-		$name = $r["fullname"];
-		$to = $mail;
-		$subject = "Hello, $name!";
-		$message = $out;  
-		mail ( $to, $subject, $message ); 
-	}
 
 	 
 }
