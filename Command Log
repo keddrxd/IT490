@@ -13,4 +13,12 @@ How to test RabbitMQ client
     ls
     vi testRabbitMQ.ini
     php testRabbitMQClient.php
+    
+Commit: 
+git commit -p
+git push
+
+Update from github:
+git fetch
+git pull
 
