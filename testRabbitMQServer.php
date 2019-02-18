@@ -24,12 +24,12 @@ function authentication($username,$password)
 	
 	if (mysqli_num_rows($t) == 0)
 	{
-		echo "Username and password incorrect.");
+		echo "Username and password incorrect.";
 		return false;
 	}
 	else
 	{
-		echo "Username and password correct.");
+		echo "Username and password correct.";
 		return true;
 	}
 	
