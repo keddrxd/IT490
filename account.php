@@ -1,5 +1,5 @@
 <?php
-$hostname = "1922168.1.11";
+$hostname = "localhost";
 $username = "Admin";
 $project = "Users";
 $password = "Admin";
