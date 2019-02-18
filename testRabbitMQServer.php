@@ -5,7 +5,7 @@ require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 use PhpAmqpLib\Connection\AMQPMessage;
-use PhpAmqpLib\Message\AMQPMessage;
+#use PhpAmqpLib\Message\AMQPMessage;
 
 include ("account.php");
 
