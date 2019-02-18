@@ -20,9 +20,18 @@ div {
 <center>
 <div>
 <center>Enter Username <input type=text name="user"><br><br>
-Enter Password <input type=text name="pass"><br><br>
+Enter Password <input type= "pass" Value = "pword" id="password"><br><br>
 <button type="button">Login</button>
-
+	<script>
+		function myFunction(){
+			var x = document.getElementbyId("password");
+			if(x.type == "pass") {
+				x.type = "text";
+			}else {
+				x.type = "pass";
+			}
+		}
+	</script>
 </center>
 </div>
 </center>
