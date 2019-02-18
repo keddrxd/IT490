@@ -1,8 +1,9 @@
 #!/usr/bin/php
+
 <?php
-require_once('path.inc');
-require_once('get_host_info.inc');
-require_once('rabbitMQLib.inc');
+#require_once('path.inc');
+#require_once('get_host_info.inc');
+#require_once('rabbitMQLib.inc');
 
 
 include ("account.php");
@@ -24,12 +25,12 @@ function authentication($username,$password)
 	
 	if (mysqli_num_rows($t) == 0)
 	{
-		echo "Username and password incorrect.");
+		echo "Username and password incorrect.";
 		return false;
 	}
 	else
 	{
-		echo "Username and password correct.");
+		echo "Username and password correct.";
 		return true;
 	}
 	
