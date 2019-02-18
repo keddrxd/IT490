@@ -21,7 +21,7 @@ function authentication($username,$password)
 {
 	
 	global $userdatabase;
-	$s = "SELECT * from Users where User = \"$username\" && Password = \"$password\"";
+	$s = "SELECT * from Users where Username = \"$username\" && Password = \"$password\"";
 	$t = mysqli_query($Users, $s);
 	
 	if (mysqli_num_rows($t) == 0)
