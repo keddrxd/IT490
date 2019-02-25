@@ -9,7 +9,7 @@ function dbRequest($request)
 {
 	
 	$client = new rabbitMQClient("db.ini","testServer");
-	if (isset($arg[1];
+	if (isset($arg[1]
 	{
 		$msg=$argv[1];
 	}
