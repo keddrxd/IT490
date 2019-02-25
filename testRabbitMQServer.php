@@ -45,13 +45,12 @@ function doLogin($username,$password)
 		echo "Username and password correct.";
 		return true;
 
-	}
- */
+	}*/
 function auth($username, $password)
 {
 	include("account.php");
 	global $db;
-	$s - "SELECT * FROM Users where Username =\"$username\" && Password = \"$password\"";
+	$s = "SELECT * FROM Users where Username =\"$username\" && Password = \"$password\"";
 	$t= mysqli_query ($db, $s);
 	$rows= mysqli_num_rows($t);
 
