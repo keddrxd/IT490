@@ -7,9 +7,9 @@ require_once('rabbitMQLib.inc');
 include ("account.php");
 
 
-	$database = mysqli_connect($hostname, $username, $password, $db);
+	$database = mysqli_connect($hostname, $username, $password, $project);
 
-global $userdb;
+global $database;
 if (mysqli_connect_errno())
 {
 	echo "failed to connect to MySQL: "."\n". mysqli_connect_error();
