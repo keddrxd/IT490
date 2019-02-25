@@ -21,13 +21,14 @@ echo "Successfully connected to MySQL.".PHP_EOL;
 
 function doLogin($username,$password)
 {
+
     // lookup username in databas
     // check password
     return true;
     //return false if not valid
 }
 
-function authentication($username,$password)
+/*function authentication($username,$password)
 {
 	
 	global $userdatabase;
@@ -43,7 +44,37 @@ function authentication($username,$password)
 	{
 		echo "Username and password correct.";
 		return true;
+
 	}
+ */
+function auth($username, $password)
+{
+	include("account.php");
+	global $db;
+	$s - "SELECT * FROM Users where Username =\"$username\" && Password = \"$password\"";
+	$t= mysqli_query ($db, $s);
+	$rows= mysqli_num_rows($t);
+
+	if(numRows($rows) == false)
+	{
+		return false;
+
+	}
+	while ($r = mysqli_fetch_array($t, MYSQL_ASSOC))
+	{
+		$user = $r["Username"];
+		$pass = $r["Password"];
+
+		if($username == $user && $password == $pass){
+			print "Credentials valiated";
+
+			return true;
+		}
+	}
+	print "Bad Credentials";
+	return false;
+}
+
 function requestProcessor($request)
 {
   echo "received request".PHP_EOL;
