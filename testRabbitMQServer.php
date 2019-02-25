@@ -7,14 +7,14 @@ require_once('rabbitMQLib.inc');
 
 include ("account.php");
 
-$mysqli = new mysqli("localhost", "Admin", "Admin", "Users");
+$mysqli = new mysqli("192.168.1.8", "Admin", "Admin", "Users");
 
 /*$userdatabase = mysqli_connect($hostname, $username, $password,$project);
 global $userdatabase;
  */
-if ($mysqli->connect_errno())
+if (mysqli_connect_errno())
   {
-      echo "Failed to connect to MySQL: " . $mysqli->connect_error();
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
   }
 echo "Successfully connected to MySQL.".PHP_EOL;
