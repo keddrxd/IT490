@@ -23,7 +23,7 @@ if (mysqli_connect_errno())
 function authentication($username,$password)
 {
 	global $database;
-	$s = "SELECT * from Users where username =\"%username\" && password = \"$password\"";
+	$s = "SELECT * from Users where username =\"$username\" && password = \"$password\"";
 	$t = mysqli_query($database,$s);
 	
 	if (mysqli_num_rows($t) == 0)
@@ -44,14 +44,14 @@ function authentication($username,$password)
 }
 function requestProcessor($request)
 {
-  echo "received request".PHP_EOL;
-  var_dump($request);
-  if(isset($request['type']))
-  {
+ 	 echo "received request".PHP_EOL;
+  	var_dump($request);
+  	if(isset($request['type']))
+  	{
  	 switch ($request['type'])
-  {
-   		 case "login":
-			 auth($request['username'], $request['password']);
+  	{	
+ 		 case "login":
+			 authentication($request['username'], $request['password']);
 			 break;
 			 
 		default:
