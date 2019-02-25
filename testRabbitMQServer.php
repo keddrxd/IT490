@@ -5,24 +5,17 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 
 
-include ("account.php");
 
-$mysqli = new mysqli("192.168.1.8", "Admin", "Admin", "Users");
-
-/*$userdatabase = mysqli_connect($hostname, $username, $password,$project);
-global $userdatabase;
- */
-if (mysqli_connect_errno())
-  {
-      echo "Failed to connect to MySQL: " . mysqli_connect_errno();
-      exit();
-}
-
-echo "Successfully connected to MySQL.".PHP_EOL;
 
 function doLogin($username,$password)
 {
+	$db = new mysqli('192.168.1.8', 'Admin', 'Admin', 'Users');
 
+	if($db->errno != 0)
+	{
+		echo "Failed to connect to MySQL" . $db->error . PHP_E0L;
+		exit(0);
+	}
     // lookup username in databas
     // check password
     return true;
