@@ -33,7 +33,7 @@ function authentication($username,$password)
 	}
 	else
 	{
-		"Success."PHP_E0L;
+		"Success.".PHP_E0L;
 		return true;
 	}
 	
