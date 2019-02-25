@@ -43,7 +43,8 @@ function requestProcessor($request)
 	  case "login":
 		return dbRequest($request);
 	  
-	  
+	  case "validate_session":
+		  return dbRequest($request);
 	  
 	  
 	  
