@@ -17,7 +17,7 @@ if (mysqli_connect_errno())
 }else	
 {
 		
-	echo "Successfully connected to MYSQL."."\n".PHP_EOL;
+	echo "Successfully connected to MYSQL."."\n".PHP_E0L;
 }
 
 function authentication($username,$password)
@@ -28,12 +28,12 @@ function authentication($username,$password)
 	
 	if (mysqli_num_rows($t) == 0)
 	{
-		echo "Username and password is not correct.".PHP_EOL;
+		echo "Username and password is not correct.".PHP_E0L;
 		return false;
 	}
 	else
 	{
-		"Success."PHP_EOL;
+		"Success."PHP_E0L;
 		return true;
 	}
 	
@@ -44,8 +44,8 @@ function authentication($username,$password)
 }
 
 $server = new rabbitMQServer("testRabbitMQ.ini","testServer");
-echo "testRabbitMQServer BEGIN".PHP_EOL;
+echo "testRabbitMQServer BEGIN".PHP_E0L;
 $server->process_requests('requestProcessor');
-echo "testRabbitMQServer END".PHP_EOL;
+echo "testRabbitMQServer END".PHP_E0L;
 exit();
 ?>
