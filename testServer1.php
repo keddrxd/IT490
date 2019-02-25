@@ -42,6 +42,25 @@ function authentication($username,$password)
 	
 	
 }
+function requestProcessor($request)
+{
+  echo "received request".PHP_EOL;
+  var_dump($request);
+  if(isset($request['type']))
+  {
+ 	 switch ($request['type'])
+  {
+   		 case "login":
+			 auth($request['username'], $request['password']);
+			 break;
+			 
+		default:
+			echo "try again";
+	
+}
+  }
+ 
+}
 
 $server = new rabbitMQServer("testRabbitMQ.ini","testServer");
 echo "testRabbitMQServer BEGIN".PHP_E0L;
