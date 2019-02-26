@@ -50,14 +50,14 @@ function requestProcessor($request)
 	  
 	  
   }
+  
+}
   return array("returnCode" => '0','message'=>"Server received request and processed");
   $server = new rabbitMQServer("Main.ini","testServer");
   echo "MainRabbitMQServer Began".PHP_EOL;
   $server->process_requests('requestProcessor');
   echo "MainRabbitMQServer Ends".PHP_EOL;
   exit();
-}
-
 
 
 
