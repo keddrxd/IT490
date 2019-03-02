@@ -22,7 +22,7 @@ else
 
 $request = array();
 $request = ['type'] = "login";
-$request = ['username'] = $_GET["username"];
+$request = ['username'] = $_GET["user"];
 $request = ['password'] = $_GET["password"];
 $request = ['message'] = $msg;
 $response = $client->send_request($request);
