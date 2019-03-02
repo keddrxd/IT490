@@ -29,14 +29,14 @@ $response = $client->send_request($request);
 
 if ($response == true)
 {
-  echo '<p style="font-size:30px; color: green" align="center">Logged In Successfully.';
-  echo '<p style="font-size:20px; align="center">Redirecting to Welcome Page.';
+  print "<p style="font-size:30px; color: green" align="center">Logged In Successfully.";
+  print "<p style="font-size:20px; align="center">Redirecting to Welcome Page.";
 }
 
 else
 {
-  echo '<p style="font-size:30px; color: red" align=center>Login Declined</p>';
-  echo '<p style="font-size:20px; align="center">Redirecting to Login Page.';
+  print "<p style="font-size:30px; color: red" align=center>Login Declined</p>";
+  echo "<p style="font-size:20px; align="center">Redirecting to Login Page.";
  }
  echo "\n\n";
 ?>
