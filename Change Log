@@ -9,4 +9,6 @@ RabbitMQ
 	 - Edit the testRabbitMQ.ini changed the BROKER_HOST =  192.168.1.4
          - After changing that we are able to connect multiple VMs using the testRabbitMQ example
 
-
+3/2/19
+Database
+	- Created a new table in MySQL we were able to connect to it.
