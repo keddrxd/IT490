@@ -4,7 +4,7 @@ include(__DIR__ . 'vendor/autoload.php');
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
-$host = localhost;
+$host = 'localhost';
 $port = 5672;
 $user = 'adam';
 $pass = 'adam';
