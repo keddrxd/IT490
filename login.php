@@ -1,6 +1,6 @@
 <?php
 
-require_once _DIR_ . '/vendor/autoload.php';
+require_once(dirname(__FILE__) . '/vendor/autoload.php');
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
