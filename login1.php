@@ -12,7 +12,7 @@ $vhost = 'beHost';
 $exchange = 'beExchange';
 $queue = "beQueue";
 
-$connection = new AMQPStreamConnection($host,$port,$user,$pass,$vhost);
+$connection = new AMQPStreamConnection($host,$port,$user,$pass);
 $channel = $connection->channel();
 
 $channel->queue_declare($queue,true,true,false,false);
