@@ -7,7 +7,7 @@ use PhpAmqpLib\Message\AMQPMessage;
 class msgReceiver
 {
 	public function msgListen()
-	{
+	 {
 
 		$connection = new AMQPConnection('192.168.1.4', 5672, 'adam', 'adam');
 		$channel = $connection->channel();
