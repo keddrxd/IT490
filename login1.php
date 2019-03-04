@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+include(__DIR__ . 'vendor/autoload.php');
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
-$host = '192.168.1.4';
+$host = 'localhost';
 $port = 5672;
 $user = 'adam';
 $pass = 'adam';
@@ -12,7 +12,7 @@ $vhost = 'beHost';
 $exchange = 'beExchange';
 $queue = "beQueue";
 
-$connection = new AMQPStreamConnection($host,$port,$user,$pass,$vhost);
+$connection = new AMQPStreamConnection($host,$port,$user,$pass);
 $channel = $connection->channel();
 
 $channel->queue_declare($queue,true,true,false,false);
