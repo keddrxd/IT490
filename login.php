@@ -27,7 +27,7 @@ class msgReceiver
 	}
 	public function redirect($response)
 	{
-    	if($response="S")
+    	if($response=="S")
 		{
 	    header('Location: homepage.html');
 	}
