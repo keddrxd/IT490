@@ -34,7 +34,7 @@ class msgReceiver
 		{	
 	    	    header('Location: failure.html');
 		}
-	}
+	 }
 }
 $receiver = new msgReceiver();
 $userLogin = $_POST["username"] . "~" . $_POST["password"];
