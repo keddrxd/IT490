@@ -27,17 +27,18 @@ class msgReceiver
 	}
 	public function redirect($response)
 	{
-    	if($response=="S")
+    		if($response=="S")
 		{
-	    header('Location: homepage.html');
-	}
-	else
-	{
-	    header('Location: failure.html');
-	}
+		    header('Location: homepage.html');
+		}
+		else
+		{	
+	    	    header('Location: failure.html');
+		}
 	}
 }
 $receiver = new msgReceiver();
 $userLogin = $_POST["username"] . "~" . $_POST["password"];
 $response = $receiver->call($userLogin);
+redirect($response);
 ?>
